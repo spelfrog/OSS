@@ -7,6 +7,7 @@ public class Main {
     private static void aufgabe1() {
         int depth = 10;
         int[][] pd = new int[depth][];
+
         for (int r = 0; r < depth; r++) {
             pd[r] = new int[r + 1];
             for (int c = 0; c <= r; c++) {
