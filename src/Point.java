@@ -1,5 +1,5 @@
 public class Point {
-    private int x, y;
+    int x, y;
 
     Point() {}
 
@@ -14,6 +14,7 @@ public class Point {
     }
 
     Point getLocation() {
+
         return new Point(this.x, this.y);
     }
 
@@ -33,11 +34,10 @@ public class Point {
     }
 
     public boolean equals(Point p) {
-        return (this.x == p.x && this.y == p.y) ? true : false;
+        return this.x == p.x && this.y == p.y;
     }
 
     public String toString() {
     return "(" + this.x + "," + this.y + ")";
     }
-
 }

@@ -2,10 +2,8 @@
 public class Main {
 
     public static void main(String[] args) {
-
         aufgabe1();
-        KreisVererb k = new KreisVererb();
-
+        aufgabe2();
     }
 
     private static void aufgabe1() {
@@ -21,7 +19,6 @@ public class Main {
                 }
             }
         }
-
         for (int r = 0; r < depth; r++) {
             for (int c = 0; c <= r; c++) {
                 System.out.print(pd[r][c] + " ");
@@ -29,4 +26,9 @@ public class Main {
             System.out.println();
         }
     }
+
+    private static void aufgabe2() {
+        //hier noch testfälle
+    }
+
 }
