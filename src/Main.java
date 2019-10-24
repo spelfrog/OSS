@@ -1,13 +1,16 @@
+
 public class Main {
 
     public static void main(String[] args) {
+
         aufgabe1();
+        KreisVererb k = new KreisVererb();
+
     }
 
     private static void aufgabe1() {
-        int depth = 10;
+        final int depth = 10;
         int[][] pd = new int[depth][];
-
         for (int r = 0; r < depth; r++) {
             pd[r] = new int[r + 1];
             for (int c = 0; c <= r; c++) {
@@ -26,5 +29,4 @@ public class Main {
             System.out.println();
         }
     }
-
 }
