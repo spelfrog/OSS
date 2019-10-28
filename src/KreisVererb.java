@@ -1,6 +1,5 @@
 public class KreisVererb extends Point {
     private int r;
-
     KreisVererb() {}
 
     KreisVererb(KreisVererb k) {
@@ -9,6 +8,7 @@ public class KreisVererb extends Point {
     }
 
     KreisVererb(int x, int y, int r) {
+        // super ermöglicht den Java Konstruktor der Oberklasse zu verwenden
         super(x,y);
         this.r = r;
     }

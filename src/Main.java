@@ -1,6 +1,7 @@
 
 public class Main {
 
+
     public static void main(String[] args) {
         aufgabe1();
         aufgabe2();
@@ -28,7 +29,17 @@ public class Main {
     }
 
     private static void aufgabe2() {
-        //hier noch testfälle
+        Point p1 = new Point(0, 10);
+        System.out.println(p1);
+        p1.move(5, 5);
+        System.out.println(p1);
+        p1.setLocation(99, 15);
+        System.out.println(p1);
+        Point p2 = p1.getLocation();
+        System.out.println(p2);
+        System.out.println(p1.equals(p2));
+        p2.move(1, 1);
+        System.out.println(p2);
     }
 
 }
