@@ -14,7 +14,6 @@ public class Point {
     }
 
     Point getLocation() {
-
         return new Point(this.x, this.y);
     }
 
