@@ -5,6 +5,7 @@ public class KreisVererb extends Point {
     KreisVererb(KreisVererb k) {
         super(k.getLocation());
         this.r = k.r;
+
     }
 
     KreisVererb(int x, int y, int r) {
