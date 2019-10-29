@@ -41,5 +41,7 @@ public class Main {
         p2.move(1, 1);
         System.out.println(p2);
     }
-
+    private static void aufgabe3() {
+        
+    }
 }
