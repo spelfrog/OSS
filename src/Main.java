@@ -55,6 +55,6 @@ public class Main {
             System.out.println(f);
             sum += f.flaechenInhalt();
         }
-        System.out.printf("Gesamt Flaeche: %.2f\n ", sum);
+        System.out.printf("Gesamt Fläche: %.2f\n ", sum);
     }
 }
