@@ -6,6 +6,7 @@ public class Main {
         aufgabe1();
         aufgabe2();
         aufgabe3();
+
     }
 
     private static void aufgabe1() {
@@ -41,6 +42,7 @@ public class Main {
         System.out.println(p1.equals(p2));
         p2.move(1, 1);
         System.out.println(p2);
+
     }
     public static void aufgabe3() {
         Form[] fs = new Form[4];
