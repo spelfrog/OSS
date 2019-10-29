@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
         aufgabe1();
         aufgabe2();
+        aufgabe3();
     }
 
     private static void aufgabe1() {
@@ -41,7 +42,17 @@ public class Main {
         p2.move(1, 1);
         System.out.println(p2);
     }
-    private static void aufgabe3() {
-        
+    public static void aufgabe3() {
+        Form[] fs = new Form[4];
+        fs[0] = new KreisAgg(2, 3, 4);
+        fs[1] = new Rechteck(5, 3);
+        fs[2] = new KreisAgg(new Point(1, 1), 10);
+        fs[3] = new Rechteck(new Point(), new Point(1, 2));
+        double sum = 0;
+        for (Form f : fs) {
+            System.out.println(f);
+            sum += f.flaechenInhalt();
+        }
+        System.out.printf("Gesamt Flaeche: %.2f\n ", sum);
     }
 }
