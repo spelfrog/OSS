@@ -6,6 +6,7 @@ public class Main {
         aufgabe1();
         aufgabe2();
         aufgabe3();
+
     }
 
     private static void aufgabe1() {
