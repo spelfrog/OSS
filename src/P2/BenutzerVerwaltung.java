@@ -24,6 +24,7 @@ public interface BenutzerVerwaltung {
    * Liefert true, falls das Parameterobjekt in der Datenhaltung vorhanden ist,
    * sonst false.
    * @param benutzer Benutzer der überprüft werden soll
+   * @return boolean true, wenn benutzer Objekt bereits in Datenbank
    */
   boolean benutzerOk(Benutzer benutzer);
 }

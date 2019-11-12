@@ -41,6 +41,7 @@ public class Benutzer {
   /**
    * Überprüfe ob obj ein Benutzer Objekt ist wenn ja dann prüfe ob die daten gleich sind
    * @param obj Objekt, dass auf gleichheit geprüft wird
+   * @return boolean true, wenn Übergebenes Objekt die gleichen Daten speichert, wie das aktuelle
    */
   @Override
   public boolean equals(Object obj) {
@@ -54,6 +55,7 @@ public class Benutzer {
 
   /**
    * Erstelle einen String als Rückgabe der die Attribute ausgibt
+   * @return String, der die Daten des Benutzers enthält
    */
   public String toString()  {
     return "UserID " + this.userId + " \nPasswort: " + String.copyValueOf(this.passWort);
