@@ -1,22 +1,84 @@
 import P1.*;
 import P2.*;
 
-//Dient zum start der Aufgaben
+/**
+ * <p>Überschrift: Main methode u. Testfälle</p>
+ * <p>Startet das Programm und enthält Testfälle</p>
+ *
+ * <p>Copyright: Constantin Kalversberg Copyright (c) 2019</p>
+ * <p>Organisation: FH Aachen, FB05 </p>
+ * @author Constantin Kalversberg
+ * @version 1.0
+ */
 public class Main {
 
-
   public static void main(String[] args) {
+    p2();
+  }
 
-    char[] a = {'a','b'};
-    char[] a2 = {'a','b'};
+  private static void p2() {
+    BenutzerVerwaltungAdmin admin = new BenutzerVerwaltungAdmin();
+    char[] password={'A','B','C'};
 
-    Benutzer b = new Benutzer("123",a);
-    Benutzer c = new Benutzer("123",a2);
-    System.out.println(b.equals2(c));
+    Benutzer user1 = new Benutzer("B1", password);
+    System.out.println(user1);
+    Benutzer user2 = new Benutzer("B2", password);
+    System.out.println(user2);
+    System.out.println("User 1 und User 2 gleich? "+ user1.equals(user2));
+    System.out.println();
+
+    System.out.println("Leerer User");
+    Benutzer user3 = new Benutzer();
+    System.out.println(user3);
+    System.out.println();
+
+    System.out.println("User 1 hinzufügen");
+    try  {
+      admin.benutzerEintragen(user1);
+      System.out.println("User 1 hinzugefuegt");
+    }  catch (BenutzerExits e) {
+      System.out.println(e);
+    }
+    System.out.println();
+
+    System.out.println("User 2 hinzufügen");
+    try  {
+      admin.benutzerEintragen(user2);
+      System.out.println("User 2 hinzugefuegt");
+    }  catch (BenutzerExits e) {
+      System.out.println(e);
+    }
+    System.out.println();
+
+    System.out.println("User 1 erneut hinzufügen");
+    try  {
+      admin.benutzerEintragen(user1);
+      System.out.println("User 1 hinzugefuegt");
+    }  catch (BenutzerExits e) {
+      System.out.println(e);
+    }
+    System.out.println();
+
+    System.out.println("User 1 loeschen");
+    try {
+      admin.benutzerLoeschen(user1);
+      System.out.println("User 1 geloescht");
+    } catch (BenutzerNotInList e) {
+      System.out.println(e);
+    }
+    System.out.println();
+
+    System.out.println("User 1 erneut loeschen");
+    try {
+      admin.benutzerLoeschen(user1);
+      System.out.println("User 1 geloescht");
+    } catch (BenutzerNotInList e) {
+      System.out.println(e);
+    }
   }
 
   // erzeugt ein Pascal’sches Dreieck der tieft depth
-  private static void aufgabe1() {
+  private static void p1aufgabe1() {
     final int depth = 10;
     int[][] pd = new int[depth][];
     for (int r = 0; r < depth; r++) {
@@ -25,7 +87,6 @@ public class Main {
       pd[r][r] =1;
       for (int c = 1; c < r; c++) {
         pd[r][c] = pd[r - 1][c - 1] + pd[r - 1][c];
-
       }
     }
 
@@ -38,16 +99,13 @@ public class Main {
   }
 
   //tests für die Aufgabe 2
-  private static void aufgabe2() {
+  private static void p1aufgabe2() {
     KreisVererb k = new KreisVererb(1,2,3);
     System.out.println(k);
     k.move(5,5);
     System.out.println(k);
     KreisVererb k2 = new KreisVererb(6,7,3);
     System.out.println(k.equals(k2));
-
-
-
     Point p1 = new Point(0, 10);
     System.out.println(p1);
     p1.move(5, 5);
@@ -63,7 +121,7 @@ public class Main {
   }
 
   //erzeugt ein Array gefüllt mir 4 Formen und berechnet den gesamten Flächeninhalt
-  public static void aufgabe3() {
+  public static void p1aufgabe3() {
     Form[] fs = new Form[4];
     fs[0] = new Rechteck(5, 5);
     fs[1] = new Rechteck(3, 3);
