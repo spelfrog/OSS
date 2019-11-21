@@ -58,6 +58,6 @@ public class Benutzer {
    * @return String, der die Daten des Benutzers enthält
    */
   public String toString()  {
-    return "UserID " + this.userId + " \nPasswort: " + String.copyValueOf(this.passWort);
+    return "UserID: " + this.userId + "\nPasswort: " + String.copyValueOf(this.passWort);
   }
 }
