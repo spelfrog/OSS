@@ -12,8 +12,10 @@ import P2.*;
  */
 public class Main {
 
-  public static void main(String[] args) {
-    p2();
+  public static void main(String[] args) throws BenutzerExits {
+      BenutzerVerwaltungAdmin admin = new BenutzerVerwaltungAdmin();
+      admin.benutzerEintragen(new Benutzer("peteasd12asf3", "test".toCharArray()));
+      System.out.println(admin);
   }
 
   private static void p2() {

@@ -1,4 +1,7 @@
 package P2;
+
+import java.io.Serializable;
+
 /**
  * <p>Überschrift: Struktur von Benutzern </p>
  * <p>Beschreibung: Diese Klasse definiert die grundlegende Struktur von
@@ -16,7 +19,7 @@ package P2;
  * @version 1.0
  */
 
-public class Benutzer {
+public class Benutzer implements Serializable {
   public String userId;
   public char[] passWort;
 
@@ -58,6 +61,6 @@ public class Benutzer {
    * @return String, der die Daten des Benutzers enthält
    */
   public String toString()  {
-    return "UserID: " + this.userId + "\nPasswort: " + String.copyValueOf(this.passWort);
+    return "UserID: " + this.userId + " Passwort: " + String.copyValueOf(this.passWort) + "\n";
   }
 }

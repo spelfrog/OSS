@@ -1,4 +1,7 @@
 package P2;
+
+import java.io.Serializable;
+
 /**
  * <p>Überschrift: Interface für Klassen, die Nutzer dses Systems darstellen</p>
  * <p>Definieren das Interface BenutzerVerwaltung, das die beiden Methoden
@@ -12,7 +15,7 @@ package P2;
  * @author Constantin Kalversberg
  * @version 1.0
  */
-public interface BenutzerVerwaltung {
+public interface BenutzerVerwaltung extends Serializable {
   /**
    * Das Parameterobjekt wird in eine Datenhaltung eingetragen.
    * @param benutzer Benutzer, der eingetragen werden soll
