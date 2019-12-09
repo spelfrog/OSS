@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="P4.LoginController"
+            prefHeight="300.0" prefWidth="500.0">
+    <Label fx:id="titel" layoutX="10.0" layoutY="10.0" text="Benutzerverwaltung">
+        <font>
+            <Font name="System Bold" size="30.0"/>
+        </font>
+    </Label>
+    <Label fx:id="labelUser" layoutX="10.0" layoutY="80.0" prefHeight="27.0" prefWidth="70.0" text="UserID"/>
+    <TextField fx:id="userID" layoutX="160.0" layoutY="80.0" prefHeight="39.0" prefWidth="255.0"/>
+    <Label fx:id="passLabel" layoutX="10.0" layoutY="145.0" text="Passwort"/>
+    <PasswordField fx:id="passwordTextField" layoutX="160.0" layoutY="140.0" prefHeight="39.0" prefWidth="255.0"/>
+    <Label fx:id="anmeldungLabel" layoutX="10.0" layoutY="200.0" text="Neu- Anmeldung"/>
+    <CheckBox fx:id="neuAnmeldungCheck" layoutX="160.0" layoutY="200.0" mnemonicParsing="false"
+              onAction="#neuAnmeldungAction"/>
+    <Button fx:id="LogIn" layoutX="10.0" layoutY="240.0" mnemonicParsing="false" onAction="#LogInAction"
+            prefHeight="39.0" prefWidth="200.0" text="Ausführen"/>
+</AnchorPane>

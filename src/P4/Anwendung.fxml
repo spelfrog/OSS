@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="P4.AnwendungsController"
+            prefHeight="140.0" prefWidth="550.0">
+    <Label layoutX="10.0" layoutY="10.0" text="Sie können das System nun verwenden">
+        <font>
+            <Font name="System Bold" size="28.0"/>
+        </font>
+    </Label>
+    <Button fx:id="Abbrechen" layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#closeApplication"
+            text="Abbrechen"/>
+</AnchorPane>

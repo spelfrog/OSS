@@ -1,5 +1,10 @@
 import P1.*;
 import P2.*;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  * <p>Überschrift: Main methode u. Testfälle</p>
@@ -10,12 +15,22 @@ import P2.*;
  * @author Constantin Kalversberg
  * @version 1.0
  */
-public class Main {
+public class Main extends Application {
 
   public static void main(String[] args) throws BenutzerExits {
-      BenutzerVerwaltungAdmin admin = new BenutzerVerwaltungAdmin();
-      admin.benutzerEintragen(new Benutzer("peteasd12asf3", "test".toCharArray()));
-      System.out.println(admin);
+    launch(args);
+  }
+
+  @Override
+  public void start(Stage primaryStage) throws Exception {
+    Parent root;
+    //root = FXMLLoader.load(getClass().getResource("P4/Anwendung.fxml"));
+    //root = FXMLLoader.load(getClass().getResource("P4/Login.fxml"));
+    root = FXMLLoader.load(getClass().getResource("P4/Anmeldung.fxml"));
+    Scene scene = new Scene(root);
+    primaryStage.setTitle("Benutzerverwaltung");
+    primaryStage.setScene(scene);
+    primaryStage.show();
   }
 
   private static void p2() {
@@ -136,4 +151,5 @@ public class Main {
     }
     System.out.printf("Gesamt Fläche: %.2f\n ", sum);
   }
+
 }
