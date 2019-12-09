@@ -6,10 +6,16 @@ import javafx.scene.control.Button;
 import javafx.event.Event;
 import javafx.stage.Stage;
 
+/**
+ * FXML Controller class
+ */
 public class AnwendungsController {
     @FXML
     private Button Abbrechen;
 
+    /**
+     * Schließt die Anwendung
+     */
     @FXML
     public void closeApplication(ActionEvent actionEvent) {
         System.out.println("Abbrechen");

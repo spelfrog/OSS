@@ -9,6 +9,9 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * FXML Controller class
+ */
 public class LoginController {
     @FXML private PasswordField passwordTextField;
     @FXML private Button LogIn;
@@ -17,11 +20,17 @@ public class LoginController {
 
     private boolean neuAnmeldung = false;
 
+    /**
+     * veränderts var neuAnmeldung abhängig von checkbox
+     */
     @FXML public void neuAnmeldungAction(ActionEvent actionEvent){
         neuAnmeldung = neuAnmeldungCheck.isSelected();
         System.out.println("Neu- Anmeldung: "+neuAnmeldung);
     }
 
+    /**
+     * legt neuen Benutzer an, wenn felder user und passwort nicht leer sind
+     */
     public void LogInAction(ActionEvent actionEvent) {
         String user = userID.getText();
         String pass = passwordTextField.getText();
