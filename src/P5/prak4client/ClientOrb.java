@@ -18,6 +18,10 @@ public class ClientOrb implements BenutzerVerwaltung {
     }
 
 
+    public void dbInitialisieren() {
+        initData(true);
+    }
+
     public void initData(boolean init) {
         ObjectInputStream in = null;
         ObjectOutputStream out = null;
@@ -195,5 +199,45 @@ public class ClientOrb implements BenutzerVerwaltung {
         }
         return ergebnis;
     }
+
+    /*
+    alternativer init
+    @Override
+    public void dbInitialisieren() {
+        boolean ergebnis = false;
+        Socket clientSocket = null;
+        ObjectInputStream in = null;
+        ObjectOutputStream out = null;
+        try {
+
+
+            clientSocket = new Socket(internetAdd, 4711);
+            out = new ObjectOutputStream(clientSocket.getOutputStream());
+            in = new ObjectInputStream(clientSocket.getInputStream());
+
+            System.err.println("Client: Stelle Anfrage, für datenbank init.");
+            //Wähle Task 3.
+            out.write(3);
+
+            //Datenbank soll neu.
+            out.writeObject(true);
+            out.flush();
+
+            //Schließe die Verbindung zum Server
+            System.err.println("Client: Login ist " + ergebnis);
+            clientSocket.close();
+        } catch (IOException ex) {
+        } finally {
+            try {
+                if (out != null && in != null && clientSocket != null) {
+                    out.close();
+                    in.close();
+                    clientSocket.close();
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(ClientOrb.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }*/
 
 }

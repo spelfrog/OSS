@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import P5.prak4gemklassen.*;
 
-public class Client extends BenutzerVerwaltungAdmin {
+public class Client implements BenutzerVerwaltung {
 
 
     private String internetAdd;
@@ -37,7 +37,12 @@ public class Client extends BenutzerVerwaltungAdmin {
     public boolean benutzerOk(Benutzer benutzer) {
         ClientOrb corb = new ClientOrb(internetAdd);
         return corb.benutzerOk(benutzer);
-
-
     }
+
+    @Override
+    public void dbInitialisieren() {
+        ClientOrb corb = new ClientOrb(internetAdd);
+        corb.dbInitialisieren();
+    }
+
 }

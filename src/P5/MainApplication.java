@@ -1,19 +1,19 @@
 package P5;
 
-import P5.prak4client.BenutzerVerwaltungAdmin;
+import P5.prak4gemklassen.BenutzerVerwaltung;
+import P5.prak4gemklassen.Benutzer;
+import P5.prak4gemklassen.BenutzerExits;
+import P5.prak4gemklassen.BenutzerNotInList;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class MainApplication extends Application {
     private Stage primaryStage;
-    private BenutzerVerwaltungAdmin admin;
+    private BenutzerVerwaltung admin;
 
     public static void main(String[] args) {
         launch(args);
@@ -22,7 +22,11 @@ public class MainApplication extends Application {
     @Override
     public void start(Stage stage) {
         this.primaryStage = stage;
-        this.admin = new P5.prak4client.Client("localhost");
+
+        if("Server".endsWith("Server"))
+            this.admin = new P5.prak4client.BenutzerVerwaltungAdmin("localhost");
+        else
+            this.admin = new P5.prak4serv.BenutzerVerwaltungAdmin();
 
         System.out.println("Wollen Sie die Datenhaltung initialisieren? nein: 0, rest ja");
 
@@ -89,7 +93,7 @@ public class MainApplication extends Application {
      * einzutragen.
      * @param benutzer
      */
-    void neuerBenutzer(P5.prak4gemklassen.Benutzer benutzer) throws P5.prak4gemklassen.BenutzerExits {
+    void neuerBenutzer(Benutzer benutzer) throws BenutzerExits {
         admin.benutzerEintragen(benutzer);
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
@@ -111,7 +115,7 @@ public class MainApplication extends Application {
         primaryStage.show();
     }
 
-    void benutzerLogin(P5.prak4gemklassen.Benutzer benutzer) throws BenutzerNotInList {
+    void benutzerLogin(Benutzer benutzer) throws BenutzerNotInList {
         if(admin.benutzerOk(benutzer)) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Anwendung.fxml"));
             Parent root = null;

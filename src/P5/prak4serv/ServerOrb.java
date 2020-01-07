@@ -88,10 +88,8 @@ public class ServerOrb {
                         boolean initalisierung = in.readBoolean();
                         if (initalisierung) {
                             System.err.println("Server: Datenhaltung wird initialisiert.");
-                            bv.deleteAll();
-
-                        } else {
                             bv.dbInitialisieren();
+                        } else {
                             System.err.println("Server: Datenhaltung wird nicht initialisiert.");
                         }
                         break;

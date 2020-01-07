@@ -1,6 +1,5 @@
 package P5;
 
-import P5.Benutzer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;

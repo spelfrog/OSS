@@ -1,6 +1,6 @@
 package P5;
 
-import P5.Benutzer;
+import P5.prak4gemklassen.BenutzerNotInList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

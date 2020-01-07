@@ -1,8 +1,9 @@
-package P5.prak4client;
+package P5.prak4gemklassen;
 
 import P5.prak4gemklassen.*;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * <p>Überschrift: Interface für Klassen, die Nutzer dses Systems darstellen</p>
@@ -32,4 +33,10 @@ public interface BenutzerVerwaltung extends Serializable {
    * @return boolean true, wenn benutzer Objekt bereits in Datenbank
    */
   boolean benutzerOk(Benutzer benutzer);
+
+
+  /**
+   * Erzeugt eine neue datenbank
+   */
+  void dbInitialisieren();
 }
