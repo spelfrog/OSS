@@ -4,12 +4,12 @@ import java.io.IOException;
 
 import P5.prak4gemklassen.*;
 
-public class Client implements BenutzerVerwaltung {
+public class Client extends BenutzerVerwaltungAdmin {
 
 
     private String internetAdd;
 
-    Client(String adresse) {
+    public Client(String adresse) {
         internetAdd = adresse;
     }
 

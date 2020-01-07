@@ -24,10 +24,10 @@ public class AnmeldungsController {
         if(!passTextField.getText().equals(passTextField2.getText())){
             userTextfield.setText("Passwort != Wiederholung");
         } else {
-            Benutzer benutzer = new Benutzer(userTextfield.getText(), passTextField.getText().toCharArray());
+            P5.prak4gemklassen.Benutzer benutzer = new P5.prak4gemklassen.Benutzer(userTextfield.getText(), passTextField.getText().toCharArray());
             try {
                 mainApplication.neuerBenutzer(benutzer);
-            } catch (BenutzerExits benutzerExits) {
+            } catch (P5.prak4gemklassen.BenutzerExits benutzerExits) {
                 userTextfield.setText("Benutzer existiert bereits");
             }
             System.out.println(benutzer);

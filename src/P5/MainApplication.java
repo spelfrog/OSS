@@ -1,5 +1,6 @@
 package P5;
 
+import P5.prak4client.BenutzerVerwaltungAdmin;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,7 +22,7 @@ public class MainApplication extends Application {
     @Override
     public void start(Stage stage) {
         this.primaryStage = stage;
-        this.admin = new BenutzerVerwaltungAdmin();
+        this.admin = new P5.prak4client.Client("localhost");
 
         System.out.println("Wollen Sie die Datenhaltung initialisieren? nein: 0, rest ja");
 
@@ -88,7 +89,7 @@ public class MainApplication extends Application {
      * einzutragen.
      * @param benutzer
      */
-    void neuerBenutzer(Benutzer benutzer) throws BenutzerExits {
+    void neuerBenutzer(P5.prak4gemklassen.Benutzer benutzer) throws P5.prak4gemklassen.BenutzerExits {
         admin.benutzerEintragen(benutzer);
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
@@ -110,7 +111,7 @@ public class MainApplication extends Application {
         primaryStage.show();
     }
 
-    void benutzerLogin(Benutzer benutzer) throws BenutzerNotInList {
+    void benutzerLogin(P5.prak4gemklassen.Benutzer benutzer) throws BenutzerNotInList {
         if(admin.benutzerOk(benutzer)) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Anwendung.fxml"));
             Parent root = null;

@@ -41,7 +41,7 @@ public class LoginController {
             if(neuAnmeldung) {
                 mainApplication.neuAnmeldung();
             } else {
-                Benutzer benutzer = new Benutzer(user,pass.toCharArray());
+                P5.prak4gemklassen.Benutzer benutzer = new P5.prak4gemklassen.Benutzer(user,pass.toCharArray());
                 try {
                     System.out.println(mainApplication);
                     mainApplication.benutzerLogin(benutzer);
